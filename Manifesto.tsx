@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MANIFESTO_ITEMS, APP_NAME_BN } from '../constants';
+import { MANIFESTO_ITEMS, APP_NAME_BN } from './constants';
 
 const Manifesto: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   return (
