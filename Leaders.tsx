@@ -1,5 +1,5 @@
 import React from 'react';
-import { LEADERS, APP_NAME_BN } from '../constants';
+import { LEADERS, APP_NAME_BN } from './constants';
 
 const Leaders: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   return (
