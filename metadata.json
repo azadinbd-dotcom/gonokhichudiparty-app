@@ -1,0 +1,8 @@
+
+{
+  "name": "Bangladesh Gono-Khichuri Party - বাংলাদেশ গণ-খিচুড়ি পার্টি",
+  "description": "A satirical political campaign app lampooning the absurdity of vote-buying and political rhetoric in a dystopian yet playful Bangladesh.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
