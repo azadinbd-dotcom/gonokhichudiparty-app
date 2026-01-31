@@ -1,7 +1,7 @@
 
 import React from 'react';
-import Logo from '../components/Logo';
-import { APP_NAME_BN, SLOGAN_BN } from '../constants';
+import Logo from './Logo';
+import { APP_NAME_BN, SLOGAN_BN } from './constants';
 
 const Splash: React.FC = () => {
   return (
