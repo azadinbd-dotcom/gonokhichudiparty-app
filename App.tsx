@@ -1,14 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { AppState, VoteData } from './types';
-import Splash from './pages/Splash';
-import Onboarding from './pages/Onboarding';
-import Home from './pages/Home';
-import VoteDashboard from './pages/VoteDashboard';
-import Manifesto from './pages/Manifesto';
-import Leaders from './pages/Leaders';
-import News from './pages/News';
-import Success from './pages/Success';
+import Splash from './Splash';
+import Onboarding from './Onboarding';
+import Home from './Home';
+import VoteDashboard from './VoteDashboard';
+import Manifesto from './Manifesto';
+import Leaders from './Leaders';
+import News from './News';
+import Success from './Success';
 import { COLORS } from './constants';
 
 const App: React.FC = () => {
