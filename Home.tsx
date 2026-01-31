@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Logo from '../components/Logo';
-import { APP_NAME_BN, SLOGAN_BN, ANNOUNCEMENTS_BN } from '../constants';
-import { AppState } from '../types';
+import Logo from './Logo';
+import { APP_NAME_BN, SLOGAN_BN, ANNOUNCEMENTS_BN } from './constants';
+import { AppState } from './types';
 
 const Home: React.FC<{ onNavigate: (page: AppState) => void }> = ({ onNavigate }) => {
   const [dailyAnnouncement, setDailyAnnouncement] = useState("");
