@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import Logo from '../components/Logo';
+import Logo from './components/Logo';
 
 const STEPS = [
   {
