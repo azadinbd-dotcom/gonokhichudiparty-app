@@ -1,5 +1,5 @@
 import React from 'react';
-import { VoteData } from '../types';
+import { VoteData } from './types';
 
 const Success: React.FC<{ data: VoteData | null, onBack: () => void }> = ({ data, onBack }) => {
   return (
