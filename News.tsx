@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { NEWS_FEED } from '../constants';
+import { NEWS_FEED } from './constants';
 
 const News: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   return (
