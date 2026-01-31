@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { DISTRICT_DATA, VOTE_PRICE } from '../constants';
-import { AppState, VoteData } from '../types';
+import { DISTRICT_DATA, VOTE_PRICE } from './constants';
+import { AppState, VoteData } from './types';
 
 const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) => void }> = ({ onNavigate }) => {
   const [votes, setVotes] = useState(1);
