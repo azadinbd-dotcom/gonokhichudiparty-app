@@ -182,7 +182,7 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
 
           {/* Phone Input */}
           <div className="space-y-3">
-            <label className="bengali-font block text-slate-300 font-medium">পেমেন্টের জন্য ৯ সংখ্যার আইডি (মোবাইল)</label>
+            <label className="bengali-font block text-slate-300 font-medium">পেমেন্টের জন্য ১১ সংখ্যার আইডি (মোবাইল)</label>
             <div className="relative">
               <input
                 type="text"
