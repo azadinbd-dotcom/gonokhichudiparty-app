@@ -152,6 +152,7 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
               <label className="bengali-font block text-slate-300 font-medium">আপনার নির্বাচনী আসন (Constituency)</label>
               <div className="relative group">
                 <select
+                  name="constituency"
                   value={selectedConstituency}
                   onChange={(e) => setSelectedConstituency(e.target.value)}
                   className="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 text-white bengali-font outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 appearance-none transition-all cursor-pointer shadow-inner"
