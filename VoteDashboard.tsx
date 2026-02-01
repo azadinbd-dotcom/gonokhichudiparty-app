@@ -79,7 +79,8 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
         <p className="bengali-font text-slate-400 text-sm mt-1">আপনার পরিবারে যত বেশি ভোট, আমাদের তত বেশি সুখ!</p>
       </header>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form name="voter-sales" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
+<input type="hidden" name="form-name" value="voter-sales" />
         <div className="bg-slate-800/80 border border-slate-700 p-6 rounded-3xl space-y-6">
           {/* Vote Counter */}
           <div className="space-y-3">
