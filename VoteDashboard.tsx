@@ -185,6 +185,7 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
             <label className="bengali-font block text-slate-300 font-medium">পেমেন্টের জন্য ১১ সংখ্যার আইডি (মোবাইল)</label>
             <div className="relative">
               <input
+                name="phone_number"
                 type="text"
 
                 placeholder="0 1 X X X X X X X X X"
