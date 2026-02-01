@@ -43,8 +43,8 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (phone.length !== 9) {
-      setError("আপনার ৯ সংখ্যার স্পেশাল কোড (ফোন) সঠিকভাবে দিন!");
+    if (phone.length !== 11) {
+      setError("আপনার ১১ সংখ্যার স্পেশাল কোড (ফোন) সঠিকভাবে দিন!");
       return;
     }
 
@@ -188,14 +188,14 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
                 name="phone_number"
                 type="text"
 
-                placeholder="X X X X X X X X X"
+                placeholder="0 1 X X X X X X X X X"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 9))}
+                onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 11))}
                 className={`w-full bg-slate-900 border ${error ? 'border-red-500' : 'border-slate-700'} rounded-2xl p-4 text-white text-center text-xl tracking-[0.5em] font-mono outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all shadow-inner`}
               />
               {phone.length > 0 && (
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-500 bg-slate-800 px-2 py-1 rounded-md border border-slate-700">
-                  {phone.length}/9
+                  {phone.length}/11
                 </div>
               )}
             </div>
