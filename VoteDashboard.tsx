@@ -9,7 +9,7 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
   const [selectedDistrict, setSelectedDistrict] = useState(districts[0]);
   const [selectedConstituency, setSelectedConstituency] = useState(DISTRICT_DATA[districts[0]][0]);
   const [phone, setPhone] = useState("");
-  const [familyNames, setFamilyNames] = useState<string[]>([]);
+  const [familyNames, setFamilyNames] = useState<string[]>(["]);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
