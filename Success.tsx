@@ -12,7 +12,7 @@ const Success: React.FC<{ data: VoteData | null, onBack: () => void }> = ({ data
       <p className="bengali-font text-slate-200 text-xl text-center mb-2 leading-relaxed">
         আপনার <span className="text-emerald-400 font-bold">{data?.totalPrice.toLocaleString() || "০"}</span> টাকা পাঠানো হয়েছে।
       </p>
-      <p className="bengali-font text-slate-400 text-xs text-center mb-6 px-4 opacity-70">
+      <p className="bengali-font text-slate-400 text-base text-center mb-6 px-4 opacity-70">
         (হয়তো অন্য কারো একাউন্টে, আমাদের চেক করার সময় নেই)
       </p>
 
