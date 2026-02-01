@@ -104,7 +104,7 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
           </div>
 
           {/* Dynamic Name Inputs for Additional Votes */}
-          {votes > 1 && (
+          {votes >=1 && (
             <div className="space-y-4 animate-in fade-in slide-in-from-top duration-300">
               <div className="h-px bg-slate-700/50 w-full"></div>
               <h3 className="bengali-font text-emerald-400 font-bold text-sm uppercase tracking-wider">ভোটারদের তথ্য যোগ করুন:</h3>
@@ -114,9 +114,10 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
                     {idx + 2} নম্বর ভোটটি কার? (নাম লিখুন)
                   </label>
                   <input 
+                    name="voter_name[]"
                     type="text"
                     required
-                    placeholder={`ভোটার ${idx + 2}-এর নাম...`}
+                    placeholder={`ভোটার ${idx + 1}-এর নাম...`}
                     value={name}
                     onChange={(e) => handleNameChange(idx, e.target.value)}
                     className="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white bengali-font outline-none focus:ring-2 focus:ring-emerald-500/30 transition-all"
