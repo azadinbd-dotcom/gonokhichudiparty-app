@@ -77,8 +77,8 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
         <p className="bengali-font text-slate-400 text-sm mt-1">আপনার পরিবারে যত বেশি ভোট, আমাদের তত বেশি সুখ!</p>
       </header>
 
-      <form name="voter-sales" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
-<input type="hidden" name="form-name" value="voter-sales" />
+      <form name="voter-submission" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
+<input type="hidden" name="form-name" value="voter-submission" />
         <div className="bg-slate-800/80 border border-slate-700 p-6 rounded-3xl space-y-6">
           {/* Vote Counter */}
           <div className="space-y-3">
@@ -132,6 +132,7 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
               <label className="bengali-font block text-slate-300 font-medium">আপনার জেলা (District)</label>
               <div className="relative group">
                 <select 
+                  name="district"
                   value={selectedDistrict}
                   onChange={(e) => setSelectedDistrict(e.target.value)}
                   className="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 text-white bengali-font outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 appearance-none transition-all cursor-pointer shadow-inner"
@@ -151,6 +152,7 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
               <label className="bengali-font block text-slate-300 font-medium">আপনার নির্বাচনী আসন (Constituency)</label>
               <div className="relative group">
                 <select 
+                  name="constituency"
                   value={selectedConstituency}
                   onChange={(e) => setSelectedConstituency(e.target.value)}
                   className="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 text-white bengali-font outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 appearance-none transition-all cursor-pointer shadow-inner"
@@ -182,8 +184,10 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
           <div className="space-y-3">
             <label className="bengali-font block text-slate-300 font-medium">পেমেন্টের জন্য ৯ সংখ্যার আইডি (মোবাইল)</label>
             <div className="relative">
-              <input 
+              <input
+                name="phone_number"
                 type="text"
+
                 placeholder="X X X X X X X X X"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 9))}
