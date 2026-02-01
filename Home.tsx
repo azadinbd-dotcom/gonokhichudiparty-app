@@ -67,7 +67,7 @@ const Home: React.FC<{ onNavigate: (page: AppState) => void }> = ({ onNavigate }
         </h3>
         <p className="bengali-font text-sm opacity-90 leading-relaxed">
           আপনার এলাকার ভোটার তালিকা আপডেট করুন এবং জিতে নিন একটি প্লাস্টিকের মেডেল! 
-          বি.দ্র: টাকা বুঝে নেওয়ার পর আমাদের আর চেনা লাগবে না।
+          বি.দ্র: টাকা বুঝে নেওয়ার পর আমাদের ভুলে গেলে চলবে না।
         </p>
       </section>
     </div>
