@@ -21,18 +21,16 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
 
   // Sync family names array with votes count
   useEffect(() => {
-    if (votes > 1) {
-      const newNames = [...familyNames];
-      while (newNames.length < votes - 1) {
+        const newNames = [...familyNames];
+    if (newNames.length < votes) {
+      while (newNames.length < votes) {
         newNames.push("");
       }
-      if (newNames.length > votes - 1) {
-        newNames.length = votes - 1;
-      }
-      setFamilyNames(newNames);
-    } else {
-      setFamilyNames([]);
+    } else if (newNames.length > votes) {
+      newNames.length = votes;
     }
+    setFamilyNames(newNames);
+
   }, [votes]);
 
   const total = votes * VOTE_PRICE;
