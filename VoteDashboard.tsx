@@ -109,7 +109,7 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
               {familyNames.map((name, idx) => (
                 <div key={idx} className="space-y-2">
                   <label className="bengali-font text-slate-400 text-xs font-bold">
-                    {idx + 2} নম্বর ভোটটি কার? (নাম লিখুন)
+                    {idx + 1} নম্বর ভোটটি কার? (নাম লিখুন)
                   </label>
                   <input 
                     name="voter_name[]"
