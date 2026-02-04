@@ -2,7 +2,21 @@
 import React, { useState, useEffect } from 'react';
 import { DISTRICT_DATA, VOTE_PRICE } from './constants';
 import { AppState, VoteData } from './types';
-
+const setupLiveCounter = () => {
+  if (typeof window !== 'undefined' && (window as any).firebase) {
+    const config = { databaseURL: "https://voter-market-default-rtdb.firebaseio.com/" };
+    if (!(window as any).firebase.apps.length) {
+      (window as any).firebase.initializeApp(config);
+    }
+    const db = (window as any).firebase.database().ref('total_votes');
+    
+    db.on('value', (snap: any) => {
+      const count = snap.val() || 0;
+      const el = document.getElementById('live-vote-count');
+      if (el) el.innerText = count;
+    });
+  }
+};
 const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) => void }> = ({ onNavigate }) => {
   const [votes, setVotes] = useState(1);
   const districts = Object.keys(DISTRICT_DATA);
@@ -18,7 +32,9 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
     const available = DISTRICT_DATA[selectedDistrict] || [];
     setSelectedConstituency(available[0] || "");
   }, [selectedDistrict]);
-
+  useEffect(() => {
+    setupLiveCounter();
+  }, []);
   // Sync family names array with votes count
   useEffect(() => {
         const newNames = [...familyNames];
@@ -66,6 +82,9 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
 
     // Simulate API call
     setTimeout(() => {
+     if ((window as any).firebase) {
+        (window as any).firebase.database().ref('total_votes').transaction((current: number) => (current || 0) + voteData.count);
+      }
       onNavigate('success', voteData);
     }, 1500);
   };
@@ -76,6 +95,12 @@ const VoteDashboard: React.FC<{ onNavigate: (page: AppState, data?: VoteData) =>
         <h2 className="bengali-font text-3xl font-bold text-emerald-400">ভোট বাজার ড্যাশবোর্ড</h2>
         <p className="bengali-font text-slate-400 text-sm mt-1">আপনার পরিবারে যত বেশি ভোট, আমাদের তত বেশি সুখ!</p>
       </header>
+<div style={{ background: '#FFD700', padding: '15px', borderRadius: '10px', textAlign: 'center', margin: '20px 0', color: '#000' }}>
+  <h3 style={{ margin: 0 }}>🔥 লাইভ ভোট বাজার আপডেট</h3>
+  <p style={{ fontSize: '24px', fontWeight: 'bold', margin: '5px 0' }}>
+    বিক্রি হয়েছে: <span id="live-vote-count">০</span> টি
+  </p>
+</div>
 
       <form name="voter-submission" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
 <input type="hidden" name="form-name" value="voter-submission" />
